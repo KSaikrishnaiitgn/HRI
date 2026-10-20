@@ -1,0 +1,259 @@
+=======================================================
+STEP 1: MODEL AND FORWARD-KINEMATICS VALIDATION
+=======================================================
+
+Model: original_sketch
+L1 = 16.50 cm
+L2 = 14.50 cm
+Endpoint B = (31.0000, 0.0000) cm
+Expected straight reach = 31.00 cm
+
+Model: human_reference
+L1 = 28.00 cm
+L2 = 26.00 cm
+Endpoint B = (54.0000, 0.0000) cm
+Expected straight reach = 54.00 cm
+
+All Step 1 tests passed.
+
+=======================================================
+STEP 2: CABLE-KINEMATICS VALIDATION
+=======================================================
+Maximum absolute Jacobian error: 2.525e-09 cm/rad
+Maximum absolute length-gradient error: 3.274e-09 cm/rad
+Acceptance tolerance: 1.0e-06
+All Step 2 numerical checks passed.
+
+=======================================================
+STEP 3: STRUCTURE-MATRIX VALIDATION
+=======================================================
+Maximum absolute length-rate error: 2.386e-09 cm/s
+Maximum absolute torque-mapping error: 3.553e-15 N*cm
+Acceptance tolerance: 1.0e-06
+All Step 3 numerical checks passed.
+
+Reference cable geometry: original_sketch
+T1: anchor=[ 0. 14.], attachment=[23.  1.], length=26.4197 cm
+T2: anchor=[0.  5.5], attachment=[7. 2.], length=7.8262 cm
+T3: anchor=[ 0.  -6.5], attachment=[ 5. -2.], length=6.7268 cm
+T4: anchor=[  0. -16.], attachment=[21. -1.], length=25.8070 cm
+
+Reference cable geometry: human_reference
+T1: anchor=[ 0. 14.], attachment=[34.5  1. ], length=36.8680 cm
+T2: anchor=[0.  5.5], attachment=[7. 2.], length=7.8262 cm
+T3: anchor=[ 0.  -6.5], attachment=[ 5. -2.], length=6.7268 cm
+T4: anchor=[  0. -16.], attachment=[32.5 -1. ], length=35.7946 cm
+
+-----------------------------------------------------------------
+REFERENCE STRUCTURE MATRIX: original_sketch
+L1 = 16.50 cm
+Posture: theta1 = 0 deg, theta2 = 0 deg
+Rows: shoulder, elbow
+Columns: T1, T2, T3, T4
+-----------------------------------------------------------------
+
+T1
+  Anchor: [ 0. 14.]
+  Attachment: [23.  1.]
+  Cable vector: [-23.  13.]
+  Length: 26.419690 cm
+  Unit vector: [-0.87056284  0.49205726]
+  Jacobian:
+ [[-1.  -1. ]
+ [23.   6.5]]
+  A column: [-12.18787974  -4.06893501]
+
+T2
+  Anchor: [0.  5.5]
+  Attachment: [7. 2.]
+  Cable vector: [-7.   3.5]
+  Length: 7.826238 cm
+  Unit vector: [-0.89442719  0.4472136 ]
+  Jacobian:
+ [[-2.  0.]
+ [ 7.  0.]]
+  A column: [-4.91934955  0.        ]
+
+T3
+  Anchor: [ 0.  -6.5]
+  Attachment: [ 5. -2.]
+  Cable vector: [-5.  -4.5]
+  Length: 6.726812 cm
+  Unit vector: [-0.74329415 -0.66896473]
+  Jacobian:
+ [[2. 0.]
+ [5. 0.]]
+  A column: [4.83141195 0.        ]
+
+T4
+  Anchor: [  0. -16.]
+  Attachment: [21. -1.]
+  Cable vector: [-21. -15.]
+  Length: 25.806976 cm
+  Unit vector: [-0.81373347 -0.58123819]
+  Jacobian:
+ [[ 1.   1. ]
+ [21.   4.5]]
+  A column: [13.01973554  3.42930534]
+
+Full four-tendon matrix A (2 x 4):
+[[-12.18788   -4.91935    4.831412  13.019736]
+ [ -4.068935   0.         0.         3.429305]]
+
+T1_T2_T3, A (2 x 3):
+[[-12.18788   -4.91935    4.831412]
+ [ -4.068935   0.         0.      ]]
+
+T1_T2_T4, A (2 x 3):
+[[-12.18788   -4.91935   13.019736]
+ [ -4.068935   0.         3.429305]]
+
+T1_T3_T4, A (2 x 3):
+[[-12.18788    4.831412  13.019736]
+ [ -4.068935   0.         3.429305]]
+
+T2_T3_T4, A (2 x 3):
+[[-4.91935   4.831412 13.019736]
+ [ 0.        0.        3.429305]]
+
+-----------------------------------------------------------------
+REFERENCE STRUCTURE MATRIX: human_reference
+L1 = 28.00 cm
+Posture: theta1 = 0 deg, theta2 = 0 deg
+Rows: shoulder, elbow
+Columns: T1, T2, T3, T4
+-----------------------------------------------------------------
+
+T1
+  Anchor: [ 0. 14.]
+  Attachment: [34.5  1. ]
+  Cable vector: [-34.5  13. ]
+  Length: 36.868008 cm
+  Unit vector: [-0.93577066  0.35260923]
+  Jacobian:
+ [[-1.  -1. ]
+ [34.5  6.5]]
+  A column: [-13.10078924  -3.22773068]
+
+T2
+  Anchor: [0.  5.5]
+  Attachment: [7. 2.]
+  Cable vector: [-7.   3.5]
+  Length: 7.826238 cm
+  Unit vector: [-0.89442719  0.4472136 ]
+  Jacobian:
+ [[-2.  0.]
+ [ 7.  0.]]
+  A column: [-4.91934955  0.        ]
+
+T3
+  Anchor: [ 0.  -6.5]
+  Attachment: [ 5. -2.]
+  Cable vector: [-5.  -4.5]
+  Length: 6.726812 cm
+  Unit vector: [-0.74329415 -0.66896473]
+  Jacobian:
+ [[2. 0.]
+ [5. 0.]]
+  A column: [4.83141195 0.        ]
+
+T4
+  Anchor: [  0. -16.]
+  Attachment: [32.5 -1. ]
+  Cable vector: [-32.5 -15. ]
+  Length: 35.794553 cm
+  Unit vector: [-0.90795938 -0.41905818]
+  Jacobian:
+ [[ 1.   1. ]
+ [32.5  4.5]]
+  A column: [14.52735015  2.79372118]
+
+Full four-tendon matrix A (2 x 4):
+[[-13.100789  -4.91935    4.831412  14.52735 ]
+ [ -3.227731   0.         0.         2.793721]]
+
+T1_T2_T3, A (2 x 3):
+[[-13.100789  -4.91935    4.831412]
+ [ -3.227731   0.         0.      ]]
+
+T1_T2_T4, A (2 x 3):
+[[-13.100789  -4.91935   14.52735 ]
+ [ -3.227731   0.         2.793721]]
+
+T1_T3_T4, A (2 x 3):
+[[-13.100789   4.831412  14.52735 ]
+ [ -3.227731   0.         2.793721]]
+
+T2_T3_T4, A (2 x 3):
+[[-4.91935   4.831412 14.52735 ]
+ [ 0.        0.        2.793721]]
+
+======================================================================
+STEP 4A: NORMALIZED TORQUE-DIRECTION FEASIBILITY
+======================================================================
+Posture: theta1 = 0 deg, theta2 = 0 deg
+Sampled directions: 360
+Tension condition: every selected tendon must have T > 0
+No physical load magnitude or tension limit is assumed.
+
+----------------------------------------------------------------------
+Arm geometry: original_sketch
+----------------------------------------------------------------------
+T1_T2_T3    : 179/360 directions ( 49.72%)
+T1_T2_T4    : 360/360 directions (100.00%)
+T1_T3_T4    : 176/360 directions ( 48.89%)
+T2_T3_T4    : 179/360 directions ( 49.72%)
+T1_T2_T3_T4 : 360/360 directions (100.00%)
+
+----------------------------------------------------------------------
+Arm geometry: human_reference
+----------------------------------------------------------------------
+T1_T2_T3    : 179/360 directions ( 49.72%)
+T1_T2_T4    : 360/360 directions (100.00%)
+T1_T3_T4    : 177/360 directions ( 49.17%)
+T2_T3_T4    : 179/360 directions ( 49.72%)
+T1_T2_T3_T4 : 360/360 directions (100.00%)
+
+Step 4A completed.
+Interpretation: results describe sampled torque-direction feasibility at one posture only.
+
+===========================================================================
+STEP 4B: POSTURE-DEPENDENT FEASIBILITY
+===========================================================================
+Posture grid: 9 x 9
+Torque directions per posture: 36
+Joint limits: theta1 [-140, 90] deg; theta2 [0, 140] deg
+Criterion: all selected tendon tensions strictly positive
+
+---------------------------------------------------------------------------
+Arm geometry: original_sketch
+---------------------------------------------------------------------------
+T1_T2_T3    : mean= 38.51%, min=  2.78%, max= 47.22%, all-directions-feasible postures=0/81
+T1_T2_T4    : mean= 60.36%, min= 22.22%, max=100.00%, all-directions-feasible postures=26/81
+T1_T3_T4    : mean= 48.15%, min= 22.22%, max=100.00%, all-directions-feasible postures=12/81
+T2_T3_T4    : mean= 45.13%, min= 16.67%, max= 47.22%, all-directions-feasible postures=0/81
+T1_T2_T3_T4 : mean= 66.77%, min= 22.22%, max=100.00%, all-directions-feasible postures=33/81
+
+---------------------------------------------------------------------------
+Arm geometry: human_reference
+---------------------------------------------------------------------------
+T1_T2_T3    : mean= 39.61%, min=  8.33%, max= 47.22%, all-directions-feasible postures=0/81
+T1_T2_T4    : mean= 51.75%, min= 27.78%, max=100.00%, all-directions-feasible postures=14/81
+T1_T3_T4    : mean= 42.63%, min= 27.78%, max=100.00%, all-directions-feasible postures=4/81
+T2_T3_T4    : mean= 44.55%, min= 19.44%, max= 47.22%, all-directions-feasible postures=0/81
+T1_T2_T3_T4 : mean= 55.21%, min= 27.78%, max=100.00%, all-directions-feasible postures=16/81
+
+Step 4B completed.
+These are sampled results only; they do not prove feasibility at every point in the continuous workspace.
+
+Workspace: original_sketch
+Sampled endpoint positions: 32571
+x range: 30.958 to 31.000 cm
+y range: -1.322 to 1.467 cm
+
+Workspace: human_reference
+Sampled endpoint positions: 32571
+x range: 53.926 to 54.000 cm
+y range: -2.302 to 2.588 cm
+
+Workspace figure saved: planar_workspace_comparison.png
