@@ -26,10 +26,6 @@ Two arm models are studied:
 | `workspace_analysis.py` | Main simulation script (all steps) |
 | `run_output.txt` | Full console output from the simulation run |
 | `workspace_results.txt` | Numerical workspace extents and feasibility summary |
-| `planar_workspace_comparison.png` | Geometric workspace: original sketch vs human reference |
-| `workspace_feasibility_heatmaps.png` | Posture-dependent feasibility heatmaps over joint-angle grid |
-| `cable_feasible_workspace.png` | Cable-feasible workspace: 3-cable vs 4-cable overlay |
-| `mechanism_photo.png` | Photo of the physical mechanism from Activity 2 |
 
 ---
 
